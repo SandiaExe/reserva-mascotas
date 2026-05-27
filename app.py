@@ -139,4 +139,9 @@ def gestionar_reservas(n_clicks, id_res, masc, owner, date, dieta):
 
 # 5. Ejecutar Servidor
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8050)
+    import os
+    # Railway asigna un puerto dinámico en la nube. Si no existe, usa el 8050 por defecto.
+    puerto = int(os.environ.get("PORT", 8050))
+    
+    # IMPORTANTE: Desactivamos el debug en producción para evitar que se cuelgue el contenedor
+    app.run(debug=False, host='0.0.0.0', port=puerto)
