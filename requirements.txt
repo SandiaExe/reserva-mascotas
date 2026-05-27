@@ -4,3 +4,4 @@ psycopg2-binary==2.9.9
 pyjwt==2.8.0
 bcrypt==4.1.2
 sqlalchemy==2.0.30
+cryptography==42.0.5
