@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Contenedor 1: Base de Datos Relacional (PostgreSQL)
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: postgres_contenedor
+    environment:
+      POSTGRES_DB: guarderia_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password_seguro
+    ports:
+      - "5432:5432"
+
+  # Contenedor 2: Aplicación Web (Dash)
+  web_app:
+    build: .
+    container_name: dash_contenedor
+    ports:
+      - "8050:8050"
+    depends_on:
+      - postgres_db
+    environment:
+      - DB_HOST=postgres_db
