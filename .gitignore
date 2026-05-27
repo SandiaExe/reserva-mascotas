@@ -1,0 +1,15 @@
+# Entorno virtual local (muy pesado para subir)
+venv/
+
+# Configuraciones locales de VS Code
+.vscode/
+
+# Archivos temporales de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos ocultos del sistema operativo
+.DS_Store
+Thumbs.db
